@@ -2,84 +2,122 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Thiệp Cưới - Tú & Mai</title>
+  <title>Thiệp cưới - Bảo Khương & Hương Giang</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: url('https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
     }
     .overlay {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.9);
       min-height: 100vh;
       padding: 40px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
     }
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 3.5em;
       color: #b85c38;
+      margin-bottom: 10px;
     }
-    h2 {
-      margin-top: 0;
-      font-weight: normal;
+    h2, h3 {
+      color: #555;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
     .card {
       background: white;
       padding: 30px;
       border-radius: 15px;
-      max-width: 600px;
-      width: 90%;
+      max-width: 800px;
+      width: 100%;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-top: 30px;
       text-align: center;
     }
-    .btn {
-      background-color: #b85c38;
-      color: white;
-      padding: 12px 24px;
+    .section {
       margin-top: 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
     }
-    .details {
+    .countdown {
+      font-size: 1.5em;
       margin-top: 20px;
-      font-size: 1.1em;
-      line-height: 1.6em;
     }
-    iframe {
+    .map {
       width: 100%;
+      height: 300px;
+      margin-top: 20px;
       border: none;
       border-radius: 10px;
-      margin-top: 20px;
-      height: 300px;
     }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <div class="card">
-      <h1>Tú & Mai</h1>
-      <h2>Trân trọng kính mời</h2>
-      <p>Đến chung vui cùng chúng tôi trong ngày trọng đại</p>
+    <h1>Đoàn Nam Bảo Khương & Nguyễn Ngọc Hương Giang</h1>
+    <p>Một hành trình mới bắt đầu...</p>
 
-      <div class="details">
-        <p><strong>⏰ Thời gian:</strong><br>17:00, Thứ Bảy, ngày 20 tháng 7 năm 2025</p>
-        <p><strong>📍 Địa điểm:</strong><br>Nhà hàng Crystal Palace, 13 Nguyễn Lương Bằng, Quận 7, TP.HCM</p>
+    <div class="card">
+      <h2>Gia đình nhà trai</h2>
+      <p>Chú rể: <strong>Đoàn Nam Bảo Khương</strong></p>
+      <p>Mẹ: <strong>Nguyễn Thụy Thúy Vân</strong></p>
+      <p>Dượng: <strong>Ngô Đoàn Anh Dũng</strong></p>
+      <p>Địa chỉ: 76/62 Bạch Đằng, Phường 14, Quận Bình Thạnh</p>
+
+      <h2>Gia đình nhà gái</h2>
+      <p>Cô dâu: <strong>Nguyễn Ngọc Hương Giang</strong></p>
+      <p>Mẹ: <strong>Ngô Thị Thu Oanh</strong></p>
+      <p>Cha: <strong>Nguyễn Ngọc Minh</strong></p>
+      <p>Địa chỉ: 287/2/5A Chu Văn An, Phường 12, Quận Bình Thạnh</p>
+
+      <h2>Thư mời</h2>
+      <p>Chúng tôi trân trọng kính mời bạn đến dự lễ thành hôn của hai con chúng tôi.</p>
+
+      <h3>Thời gian & địa điểm</h3>
+      <p><strong>Thứ Bảy, ngày 26/07/2025</strong> lúc <strong>17:00</strong></p>
+      <p>Nhà hàng <strong>Pavillon Tân Sơn Nhất</strong></p>
+      <p>Địa chỉ: 202 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP.HCM</p>
+
+      <div class="section">
+        <h3>Đếm ngược đến ngày cưới</h3>
+        <div class="countdown" id="countdown"></div>
       </div>
 
-      <a class="btn" href="https://forms.gle/your-form-link" target="_blank">Xác nhận tham dự</a>
-
-      <!-- Google Map -->
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+      <div class="section">
+        <h3>Bản đồ địa điểm</h3>
+        <iframe class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0564056311735!2d106.66640271533463!3d10.806324061586833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292e21728521%3A0xdff946ec35a0c7a1!2sPavillon%20T%C3%A2n%20S%C6%A1n%20Nh%E1%BA%A5t!5e0!3m2!1svi!2s!4v1681984102060!5m2!1svi!2s">
+        </iframe>
+      </div>
     </div>
   </div>
+
+  <!-- Countdown Script -->
+  <script>
+    const targetDate = new Date("2025-07-26T17:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "Hôn lễ đã bắt đầu!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+    }, 1000);
+  </script>
 </body>
 </html>
