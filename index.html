@@ -12,18 +12,23 @@
       box-sizing: border-box;
     }
     html, body {
-      scroll-behavior: smooth;
+      height: 100%;
       font-family: 'Montserrat', sans-serif;
     }
+    body {
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+    }
     section {
-      height: 100vh;
+      height: 100vh;  /* Mỗi phần chiếm chiều cao của màn hình */
       width: 100%;
+      max-width: 600px; /* Chiều rộng cố định như giao diện di động */
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-align: center;
-      padding: 20px;
       position: relative;
     }
     .overlay {
@@ -39,7 +44,7 @@
     }
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 10px;
     }
     h2 {
@@ -49,7 +54,7 @@
     p {
       font-size: 1.1em;
       line-height: 1.6;
-      max-width: 700px;
+      max-width: 500px;
       margin: 0 auto;
     }
 
@@ -74,6 +79,14 @@
       border: none;
       border-radius: 10px;
       margin-top: 20px;
+    }
+
+    /* Scroll Behavior */
+    section {
+      scroll-snap-align: start; /* Tạo điểm dừng cho từng section */
+    }
+    body {
+      scroll-snap-type: y mandatory; /* Cho phép cuộn đến từng phần */
     }
   </style>
 </head>
