@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đám cưới Khương Giang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+            background-color: #eee;
+        }
+
+        .wrapper {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .section {
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-content {
+            width: 100%;
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .section:nth-child(1) {
+            background-color: #ff9999;
+        }
+
+        .section:nth-child(2) {
+            background-color: #ffcc99;
+        }
+
+        .section:nth-child(3) {
+            background-color: #99ccff;
+        }
+
+        .section:nth-child(4) {
+            background-color: #99ffcc;
+        }
+
+        .section:nth-child(5) {
+            background-color: #cc99ff;
+        }
+
+        /* Cô dâu & Chú rể */
+        .slideshow-container {
+            position: relative;
+            margin: 20px auto;
+            max-width: 300px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Optional: hiệu ứng fade */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- Giới thiệu -->
+        <div class="section">
+            <div class="section-content">
+                <h2>Phần 1: Giới thiệu</h2>
+                <p>Chào mừng đến với đám cưới của Khương & Giang!</p>
+            </div>
+        </div>
+
+        <!-- Cô dâu & Chú rể -->
+        <div class="section">
+            <div class="section-content">
+                <h2>Phần 2: Cô dâu & Chú rể</h2>
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="images/hinh1.JPG" alt="Cô dâu & Chú rể 1">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/hinh1.JPG" alt="Cô dâu & Chú rể 2">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/hinh1.JPG" alt="Cô dâu & Chú rể 3">
+                    </div>
+                </div>
+                <p>Giới thiệu về cặp đôi đáng yêu của chúng ta.</p>
+            </div>
+        </div>
+
+        <!-- Thời gian & Địa điểm -->
+        <div class="section">
+            <div class="section-content">
+                <h2>Phần 3: Thời gian & Địa điểm</h2>
+                <p>Ngày 20/12/2025 tại Hà Nội.</p>
+            </div>
+        </div>
+
+        <!-- Lời chúc -->
+        <div class="section">
+            <div class="section-content">
+                <h2>Phần 4: Lời chúc</h2>
+                <p>Hãy gửi lời chúc đến đôi uyên ương nhé!</p>
+            </div>
+        </div>
+
+        <!-- Cảm ơn -->
+        <div class="section">
+            <div class="section-content">
+                <h2>Phần 5: Cảm ơn</h2>
+                <p>Trân trọng cảm ơn bạn đã đến chung vui cùng chúng tôi.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Đổi ảnh sau 3 giây
+        }
+    </script>
+</body>
+
+</html>
