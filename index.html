@@ -14,14 +14,14 @@
     html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth; /* Enable smooth scrolling */
     }
     body {
       background-color: #f9f9f9;
       overflow-x: hidden;
-      scroll-behavior: smooth; /* Enable smooth scrolling */
     }
     section {
-      height: 100vh;  /* Mỗi phần chiếm chiều cao của màn hình */
+      height: 100vh; /* Mỗi phần chiếm chiều cao của màn hình */
       width: 100%;
       max-width: 600px; /* Chiều rộng cố định như giao diện di động */
       margin: 0 auto;
@@ -84,15 +84,41 @@
     }
 
     /* Scroll Behavior */
-    section {
-      scroll-snap-align: start; /* Tạo điểm dừng cho từng section */
-    }
     body {
       scroll-snap-type: y mandatory; /* Cho phép cuộn đến từng phần */
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#welcome">Trang chủ</a>
+    <a href="#family">Gia đình</a>
+    <a href="#invitation">Thư mời</a>
+    <a href="#details">Thông tin cưới</a>
+    <a href="#countdown">Đếm ngược</a>
+    <a href="#map">Bản đồ</a>
+  </nav>
 
   <!-- Welcome -->
   <section id="welcome">
