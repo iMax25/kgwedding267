@@ -1,212 +1,443 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thiệp Cưới - Bảo Khương & Hương Giang</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp Cưới Đoàn Nam Bảo Khương & Nguyễn Ngọc Hương Giang</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Liên kết Font Awesome để sử dụng icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
   <style>
-    * {
+    body {
+      font-family: 'Quicksand', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth; /* Enable smooth scrolling */
-    }
-    body {
-      background-color: #f9f9f9;
+      color: #444;
+      background-color: #fff8f0;
       overflow-x: hidden;
-    }
-    section {
-      height: 100vh; /* Mỗi phần chiếm chiều cao của màn hình */
-      width: 100%;
-      max-width: 600px; /* Chiều rộng cố định như giao diện di động */
-      margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: center;
-      color: white;
-      text-align: center;
-      position: relative;
-      scroll-snap-align: start; /* Tạo điểm dừng cho từng section */
     }
-    .overlay {
+
+    .header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #d81b60;
+      font-weight: normal;
+    }
+
+    .sub-header {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 20px;
+      color: #f0f0f0;
+      margin-top: 10px;
+      font-style: italic;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .content {
+      font-size: 16px;
+      color: #f0f0f0;
+      margin-top: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border-bottom: 2px solid #e0e0e0;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #fff;
+    }
+
+    .section::before {
+      content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* lớp phủ làm mờ hình */
       z-index: 1;
     }
-    .content {
+
+    .section>* {
       position: relative;
       z-index: 2;
     }
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
-      margin-bottom: 10px;
+
+    .section:nth-child(1) {
+      background-image: url('https://jovian.vn/wp-content/uploads/2025/04/chupanhcuoisaigon-3.jpg');
+      /* hoa pastel */
     }
-    h2 {
-      font-size: 2em;
+
+    .section:nth-child(2) {
+      background-image: url('https://jovian.vn/wp-content/uploads/2025/04/chupanhcuoisaigon-3.jpg');
+      /* nền lụa */
+    }
+
+    .section:nth-child(3) {
+      background-image: url('https://jovian.vn/wp-content/uploads/2025/04/chupanhcuoisaigon-3.jpg');
+      /* lịch/nền kem */
+    }
+
+    .section:nth-child(4) {
+      background-image: url('https://jovian.vn/wp-content/uploads/2025/04/chupanhcuoisaigon-3.jpg');
+      /* ảnh out-of-focus */
+    }
+
+    .section:nth-child(5) {
+      background-image: url('https://jovian.vn/wp-content/uploads/2025/04/chupanhcuoisaigon-3.jpg');
+      /* thư pháp nhẹ nhàng */
+    }
+
+    .content p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .info-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .info-box {
+      width: 45%;
+      text-align: left;
+      padding: 15px;
+      background-color: inherit;
+      border-radius: 10px;
+    }
+
+    .info-box h3 {
+      font-size: 20px;
+      color: #f57c00;
+    }
+
+    .info-box p {
+      font-size: 16px;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    /* Icon styling */
+    .info-box i {
+      color: #e91e63;
+      margin-right: 10px;
+    }
+
+    .icon-heart {
+      font-size: 32px;
+      color: #ff4081;
+    }
+
+
+    /* Section 1: Countdown */
+    .countdown-timer {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffebee;
+      background-color: rgba(233, 30, 99, 0.6);
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Section 3: Phần thiết kế lịch */
+    .wedding-calendar {
+      background-color: rgba(255, 248, 225, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 360px;
+      margin: 30px auto 0 auto;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .calendar-header {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #f57c00;
       margin-bottom: 15px;
     }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 0 auto;
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
     }
 
-    /* Backgrounds */
-    #welcome { background: url('https://images.unsplash.com/photo-1571607381436-fbfb0ab4cb29?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA0OXwwfDF8c2VhY2h8MXx8Y2hpY3V0fGVufDB8fHx8fDE2NzQ4ODg4Mjc&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-    #family  { background: url('https://images.unsplash.com/photo-1508219436287-9e029eafedb7?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OHwwfDF8c2VhY2h8Mnx8Y2hpY3V0fGVufDB8fHx8fDE2NzQ4ODg3MjY&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-    #invitation { background: url('https://images.unsplash.com/photo-1579030741719-7be0bfae6b7f?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OHwwfDF8c2VhY2h8Mnx8Y2hpY3V0fGVufDB8fHx8fDE2NzQ4ODg2NzA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-    #details { background: url('https://images.unsplash.com/photo-1598911415972-6c201bc9b57c?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OHwwfDF8c2VhY2h8MXx8dGVuZCUyMGphfGVufDB8fHx8fDE2NzQ4ODg2MzE&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-    #countdown { background: url('https://images.unsplash.com/photo-1553546631-b5990fa07867?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OHwwfDF8c2VhY2h8OXx8Y2hpY3V0fGVufDB8fHx8fDE2NzQ4ODg2MzE&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-    #map { background: url('https://images.unsplash.com/photo-1541537215819-d832a600dd57?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5OHwwfDF8c2VhY2h8OXx8bWFwfGVufDB8fHx8fDE2NzQ4ODg2MTY&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover; }
-
-    /* Countdown styling */
-    #timer {
-      font-size: 2em;
-      margin-top: 20px;
+    .calendar-grid div {
+      padding: 10px;
+      border-radius: 8px;
+      color: #444;
+      font-weight: 500;
+      /* Bỏ nền và shadow để lịch nhẹ nhàng hơn */
     }
 
-    iframe {
-      width: 90%;
-      max-width: 800px;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
+
+    .wedding-day {
+      background-color: #ff4081;
+      color: #fff !important;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
+      position: relative;
     }
 
-    /* Scroll Behavior */
-    body {
-      scroll-snap-type: y mandatory; /* Cho phép cuộn đến từng phần */
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
     }
-    nav {
-      position: fixed;
+
+    .wedding-day i {
+      display: block;
+      margin-top: 5px;
+      font-size: 16px;
+      color: #fff;
+      animation: heartbeat 1.5s infinite;
+    }
+
+
+    /* Section 4: Map */
+    .map-container {
+      background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #fff;
+    }
+
+    .map-container::before {
+      content: "";
+      position: absolute;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
-      z-index: 9999;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* overlay */
+      z-index: 1;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 1.1em;
+
+    .map-container>* {
+      position: relative;
+      z-index: 2;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .map-embed {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
+
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="#welcome">Trang chủ</a>
-    <a href="#family">Gia đình</a>
-    <a href="#invitation">Thư mời</a>
-    <a href="#details">Thông tin cưới</a>
-    <a href="#countdown">Đếm ngược</a>
-    <a href="#map">Bản đồ</a>
-  </nav>
-
-  <!-- Welcome -->
-  <section id="welcome">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Đoàn Nam Bảo Khương & Nguyễn Ngọc Hương Giang</h1>
-      <p>Chúng tôi hân hoan chào đón bạn đến với ngày trọng đại của cuộc đời mình 💕</p>
+  <div class="container">
+    <!-- Section 1: Tiêu đề -->
+    <div class="section">
+      <div>
+        <h1 class="header">
+          <p>Đoàn Nam Bảo Khương</p>
+          <p>&</p>
+          <p>Nguyễn Ngọc Hương Giang</p>
+        </h1>
+        <h2 class="sub-header">Chúng tôi xin trân trọng mời quý vị đến tham dự lễ cưới của chúng tôi</h2>
+        <div id="countdown" class="countdown-timer"></div>
+      </div>
     </div>
-  </section>
 
-  <!-- Gia đình -->
-  <section id="family">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Gia đình hai bên</h2>
-      <p>
-        Nhà trai: <br>
-        Mẹ: Nguyễn Thụy Thúy Vân | Dượng: Ngô Đoàn Anh Dũng <br>
-        Địa chỉ: 76/62 Bạch Đằng, P14, Q. Bình Thạnh
-      </p>
-      <br>
-      <p>
-        Nhà gái: <br>
-        Mẹ: Ngô Thị Thu Oanh | Cha: Nguyễn Ngọc Minh <br>
-        Địa chỉ: 287/2/5A Chu Văn An, P12, Q. Bình Thạnh
-      </p>
+    <!-- Section 2: Thông tin đàn trai và đàn gái (Nằm ngang) -->
+    <div class="section">
+      <div class="info-container">
+        <!-- Đàn trai -->
+        <div class="info-box">
+          <h3><i class="fas fa-user-tie"></i>Thông tin đàn trai</h3>
+          <div class="content">
+            <p><strong>Chú rể:</strong> Đoàn Nam Bảo Khương</p>
+            <p><strong>Mẹ chú rể:</strong> Nguyễn Thụy Thúy Vân</p>
+            <p><strong>Dượng chú rể:</strong> Ngô Đoàn Anh Dũng</p>
+            <p><strong>Địa chỉ:</strong> 76/62 Bạch Đằng, Phường 14, Quận Bình Thạnh</p>
+          </div>
+        </div>
+        <!-- Đàn gái -->
+        <div class="info-box">
+          <h3><i class="fas fa-female"></i>Thông tin đàn gái</h3>
+          <div class="content">
+            <p><strong>Cô dâu:</strong> Nguyễn Ngọc Hương Giang</p>
+            <p><strong>Mẹ cô dâu:</strong> Ngô Thị Thu Oanh</p>
+            <p><strong>Cha cô dâu:</strong> Nguyễn Ngọc Minh</p>
+            <p><strong>Địa chỉ:</strong> 287/2/5A Chu Văn An, Phường 12, Quận Bình Thạnh</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Thư mời -->
-  <section id="invitation">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Thư mời</h2>
-      <p>Trân trọng kính mời quý vị đến chung vui cùng chúng tôi trong ngày vui trọng đại này.<br/>Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình hai bên.</p>
+    <!-- Section 3: Thông tin cưới -->
+    <div class="section">
+      <div>
+        <h3 class="header"><i class="fas fa-calendar-alt"></i>Thông tin cưới</h3>
+        <div class="content">
+          <p><strong>Ngày cưới:</strong> Thứ 7, ngày 26 tháng 07 năm 2025</p>
+          <p><strong>Địa điểm:</strong> Nhà hàng Pavillon Tân Sơn Nhất</p>
+          <p><strong>Địa chỉ:</strong> 202 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận</p>
+        </div>
+
+        <!-- Phần Lịch Đẹp -->
+        <div class="wedding-calendar">
+          <div class="calendar-header">
+            <i class="fas fa-calendar-alt"></i> Tháng 7, 2025
+          </div>
+          <div class="calendar-grid">
+            <div>MO</div>
+            <div>TU</div>
+            <div>WE</div>
+            <div>TH</div>
+            <div>FR</div>
+            <div>SA</div>
+            <div>SU</div>
+            <div></div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+            <div>24</div>
+            <div>25</div>
+            <div class="wedding-day" title="Ngày cưới của chúng tôi 💖">26<br><i class="fas fa-heart"></i></div>
+            <div>27</div>
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
 
-  <!-- Thông tin cưới -->
-  <section id="details">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Thông tin lễ cưới</h2>
-      <p>
-        📅 Ngày cưới: Thứ Bảy, 26/07/2025<br>
-        🕒 Thời gian: 17:00<br>
-        🏛️ Địa điểm: Pavillon Tân Sơn Nhất<br>
-        📍 202 Hoàng Văn Thụ, P9, Q. Phú Nhuận, TP.HCM
-      </p>
+    <!-- Section 4: Map -->
+    <div class="section map-container">
+      <div>
+        <h3 class="header"><i class="fas fa-map-marker-alt"></i> Bản đồ đến địa điểm cưới</h3>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.134645147345!2d106.66827097583861!3d10.80099805873835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752928af1513fb%3A0xd2651b40d27136ec!2zTmjDoCBIw6BuZyBQYXZpbGxvbg!5e0!3m2!1svi!2s!4v1745122605911!5m2!1svi!2s"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Đếm ngược -->
-  <section id="countdown">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Đếm ngược đến ngày cưới</h2>
-      <div id="timer">Loading...</div>
+
+    <!-- Section 5: Footer -->
+    <div class="section footer">
+      <div class="sub-header">
+        <p>Chúng tôi rất mong được đón tiếp quý vị.</p>
+        <p>Trân trọng</p>
+      </div>
     </div>
-  </section>
+  </div>
+</body>
 
-  <!-- Bản đồ -->
-  <section id="map">
-    <div class="overlay"></div>
-    <div class="content">
-      <h2>Địa điểm tổ chức</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0564056311735!2d106.66640271533463!3d10.806324061586833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292e21728521%3A0xdff946ec35a0c7a1!2sPavillon%20T%C3%A2n%20S%C6%A1n%20Nh%E1%BA%A5t!5e0!3m2!1svi!2s!4v1681984102060!5m2!1svi!2s"></iframe>
-    </div>
-  </section>
 
-  <script>
-    const countdown = () => {
-      const weddingDate = new Date("2025-07-26T17:00:00").getTime();
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<script>
+  // Set ngày cưới
+  const weddingDate = new Date("2025-07-26T00:00:00").getTime();
 
-      document.getElementById("timer").innerText =
-        `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+  const countdownElement = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      countdownElement.innerHTML = "Đã đến ngày cưới!";
+      return;
     }
 
-    setInterval(countdown, 1000);
-    countdown();
-  </script>
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-</body>
+    countdownElement.innerHTML = `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây ❤️`;
+  }
+
+  updateCountdown(); // gọi ban đầu
+  setInterval(updateCountdown, 1000); // cập nhật mỗi giây
+</script>
+
 </html>
