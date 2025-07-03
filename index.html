@@ -2,467 +2,87 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>Đám cưới Khương Giang</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            color: #333;
+        }
 
-    html,
-    body {
-      scroll-behavior: smooth;
-      font-family: 'Cormorant Garamond', serif;
-      background-color: #eee;
-      color: #eee;
-    }
+        .wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .wrapper {
-      max-width: 520px;
-      margin: 0 auto;
-    }
+        .coming-soon {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
 
-    .section {
-      height: 100vh;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .coming-soon h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #cc3366;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
 
-    .section-content {
-      width: 100%;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .section:nth-child(2) {
-      background-color: #be3455;
-    }
-
-    .section:nth-child(3) {
-      height: auto;
-    }
-
-    .section:nth-child(4) {
-      height: auto;
-      background-color: #be3455;
-    }
-
-    .section:nth-child(5) {
-      background-color: #cc99ff;
-    }
-
-    /* Giới thiệu */
-    .section-intro {
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section-intro .intro-gif {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Cô dâu & Chú rể */
-    .couple-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-      text-align: center;
-    }
-
-    .couple-photo {
-      padding: 12px;
-      border-radius: 12px;
-      background: #eee;
-    }
-
-    .parents-row {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .parent {
-      width: 45%;
-      text-align: center;
-      font-size: 16px;
-      line-height: 1.4;
-    }
-
-    .wedding-announcement {
-      text-align: center;
-      margin-top: 16px;
-      margin-bottom: 16px;
-    }
-
-    .bride-groom {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      margin-top: 16px;
-      margin-bottom: 16px;
-      gap: 10px;
-    }
-
-    .wedding-announcement .line {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 4px 0;
-      text-transform: uppercase;
-    }
-
-    .wedding-announcement .line.large {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .wedding-announcement .couple-heart {
-      font-size: 18px;
-      margin: 4px 0;
-    }
-
-    .couple-heart {
-      font-size: 18px;
-      margin: 4px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .italic-name {
-      font-style: italic;
-    }
-
-    .heart-icon {
-      font-size: 20px;
-    }
-
-
-    .couple-photo img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .event-address p {
-      font-size: 16px;
-    }
-
-    .event-time p {
-      font-size: 16px;
-    }
-
-    .font-24 {
-      font-size: 24px !important;
-    }
-
-    .font-50 {
-      font-size: 50px !important;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.08);
-        opacity: 0.95;
-      }
-    }
-
-    .pulse {
-      animation: pulse 3s ease-in-out infinite;
-      display: inline-block;
-      will-change: transform;
-    }
-
-    .pulse-delay-0 {
-      animation-delay: 0s;
-    }
-
-    .pulse-delay-1 {
-      animation-delay: 1s;
-    }
-
-    .pulse-delay-2 {
-      animation-delay: 2s;
-    }
-
-    /* Thời gian & Địa điểm */
-    .section-wedding-date .section-content {
-      background-color: #eee;
-      padding: 30px 20px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .wedding-date {
-      font-size: 50px;
-      color: #cc3366;
-    }
-
-    .wedding-date-invite {
-      font-size: 16px;
-      color: #cc3366;
-      margin-bottom: 24px;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 12px;
-    }
-
-    /* Album ảnh cưới */
-    .section-we-tied {
-      background-color: #fff0f5;
-      padding: 60px 0 0 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .section-we-tied .section-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .tied-title {
-      text-align: left;
-      font-size: 28px;
-      font-weight: 200;
-      padding: 0 20px;
-    }
-
-    .image-row {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-
-    .image-row img {
-      flex: 1;
-      min-width: 0;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .fade-in-left,
-    .fade-in-right {
-      opacity: 0;
-      transition: all 1s ease-out;
-    }
-
-    .fade-in-left.animate {
-      animation: slideInFromLeft 1s ease-out forwards;
-    }
-
-    .fade-in-right.animate {
-      animation: slideInFromRight 1s ease-out forwards;
-    }
-
-    @keyframes slideInFromLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-60px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInFromRight {
-      0% {
-        opacity: 0;
-        transform: translateX(60px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .image-large-wrapper {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .image-large {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* Ảnh nhỏ chung */
-    .small-image {
-      position: absolute;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Ảnh bên trái – cao 80%, cách vào trong */
-    .left-image {
-      height: 80%;
-      top: 10%;
-      left: 5%;
-      aspect-ratio: 2 / 3;
-    }
-
-    /* Ảnh bên phải – cao 50%, cách vào trong */
-    .right-image {
-      height: 60%;
-      bottom: 10%;
-      right: 5%;
-      aspect-ratio: 2 / 3;
-    }
-  </style>
+        #countdown {
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
 </head>
 
 <body>
-
-  <div class="wrapper">
-
-    <!-- Giới thiệu -->
-    <div class="section section-intro">
-      <img src="images/introduce.gif" alt="Giới thiệu đám cưới" class="intro-gif" />
+    <div class="wrapper">
+        <div class="coming-soon">
+            <h1>Coming Soon</h1>
+            <p id="countdown">Đang tải...</p>
+        </div>
     </div>
 
-    <!-- Cô dâu & Chú rể -->
-    <div class="section section-couple">
-      <div class="section-content couple-content">
-        <div class="wedding-announcement">
-          <p class="line font-24">THE WEDDING OF</p>
-        </div>
+    <script>
+        const countdownDate = new Date("Jul 26, 2025 00:00:00").getTime();
 
-        <div class="bride-groom">
-          <p class="font-24 pulse pulse-delay-0">DOAN NAM BAO KHUONG</p>
-          <p class="couple-heart">
-            <span class="italic-name">Út nam</span>
-            <i class="fa-solid fa-heart heart-icon"></i>
-            <span class="italic-name">Út nữ</span>
-          </p>
-          <p class="font-24 pulse pulse-delay-1">NGUYEN NGOC HUONG GIANG</p>
-        </div>
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-        <div class="couple-photo">
-          <img src="images/hinhus.jpg" alt="Ảnh cưới Khương & Giang" />
-        </div>
-
-        <div class="event-address">
-          <p class="font-24 pulse pulse-delay-2">PAVILLON - AMBER LOBBY</p>
-          <p>202 Hoang Van Thu Street, 9 Ward, Phu Nhuan District, Ho Chi Minh City</p>
-        </div>
-
-        <div class="event-time">
-          <p class="font-50">18:00</p>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- Thời gian & Địa điểm -->
-    <div class="section section-wedding-date">
-      <div class="section-content">
-        <h2 class="wedding-date">26.07.2025</h2>
-        <h2 class="wedding-date-invite italic-name">Invite you to celebrate our wedding</h2>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1512828123897!2d106.6702693!3d10.8009909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752928b68fbc3f%3A0xc58bea5686708420!2sTrung%20T%C3%A2m%20H%E1%BB%99i%20Ngh%E1%BB%8B%20%26%20Ti%E1%BB%87c%20C%C6%B0%E1%BB%9Bi%20Pavillon%20T%C3%A2n%20S%C6%A1n%20Nh%E1%BA%A5t!5e0!3m2!1svi!2s!4v1720000000000!5m2!1svi!2s"
-            width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Album ảnh cưới -->
-    <div class="section section-we-tied">
-      <div class="section-content">
-        <h2 class="tied-title">"We tied the knot"</h2>
-      </div>
-
-      <div class="image-row">
-        <img src="images/hinh1.jpg" alt="Ảnh cưới 1" class="fade-in-left" />
-        <img src="images/hinh2.jpg" alt="Ảnh cưới 2" />
-        <img src="images/hinh3.jpg" alt="Ảnh cưới 3" class="fade-in-right" />
-      </div>
-
-      <div class="section-content">
-        <div class="image-large-wrapper">
-          <img src="images/hinh4.jpg" alt="Ảnh cưới lớn" class="image-large" />
-
-          <!-- Ảnh nhỏ bên trái -->
-          <img src="images/hinh5.jpg" alt="Ảnh nhỏ 1" class="small-image left-image" />
-
-          <!-- Ảnh nhỏ bên phải -->
-          <img src="images/hinh6.jpg" alt="Ảnh nhỏ 2" class="small-image right-image" />
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- Cảm ơn -->
-    <div class="section">
-      <div class="section-content">
-        <h2>Phần 5: Cảm ơn</h2>
-        <p>Trân trọng cảm ơn bạn đã đến chung vui cùng chúng tôi.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
-              observer.unobserve(entry.target); // chỉ chạy 1 lần
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "🎉 Hôm nay là ngày đặc biệt! 🎉";
+                clearInterval(countdownFunction);
+                return;
             }
-          });
-        },
-        {
-          threshold: 0.2, // phần trăm phần tử hiển thị mới kích hoạt
-        }
-      );
 
-      const targets = document.querySelectorAll(".fade-in-left, .fade-in-right");
-      targets.forEach(el => observer.observe(el));
-    });
-  </script>
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            document.getElementById("countdown").innerHTML =
+                `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+        }, 1000);
+    </script>
 </body>
 
 </html>
