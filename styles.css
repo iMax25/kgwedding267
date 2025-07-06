@@ -12,12 +12,12 @@
 html,
 body {
     font-family: 'Cormorant Garamond', serif;
-    background-color: #eee;
     scroll-behavior: smooth;
 }
 
 .wrapper {
     max-width: 520px;
+    background-color: #fcf4ea;
     margin: 0 auto;
 }
 
@@ -33,30 +33,14 @@ body {
     text-align: center;
 }
 
-.section:nth-child(2) {
-    background-color: #be3455;
-}
-
-.section:nth-child(4) {
-    background-color: #be3455;
-}
-
-.section:nth-child(5) {
-    background-color: #cc99ff;
-}
-
 /* Giới thiệu */
 .section-intro {
     padding: 0;
-    position: relative;
-    overflow: hidden;
 }
 
 .intro-gif {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
+    object-fit: contain;
 }
 
 /* Cô dâu & Chú rể */
@@ -65,7 +49,6 @@ body {
     flex-direction: column;
     gap: 24px;
     align-items: center;
-    background-color: #eee;
 }
 
 .wedding-announcement p {
@@ -77,13 +60,13 @@ body {
 .bride-groom {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .pulse {
     animation: pulse 3s ease-in-out infinite;
     font-family: 'Fz Alpha Brights', serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .pulse-delay-0 {
@@ -129,7 +112,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-bottom: 20px;
 }
 
 .event-address p {
@@ -137,22 +119,12 @@ body {
 }
 
 /* Thời gian & Địa điểm */
-.section-wedding-date .section-content {
-    background-color: #eee;
-    padding: 30px 20px;
-    border-radius: 16px;
-}
-
 .wedding-date {
-    font-size: 50px;
-    color: #cc3366;
-}
-
-.wedding-date-invite {
-    font-size: 16px;
-    color: #cc3366;
-    margin-bottom: 24px;
-    font-style: italic;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
 }
 
 .map-container iframe {
@@ -162,10 +134,39 @@ body {
     border-radius: 12px;
 }
 
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.countdown-box {
+    border: 2px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 70px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fefefe;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.countdown-box span {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+.countdown-box div {
+    font-size: 14px;
+    color: #666;
+}
+
 /* Album ảnh cưới */
 .section-we-tied {
-    background-color: #fff0f5;
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
 }
@@ -173,65 +174,136 @@ body {
 .tied-title {
     text-align: left;
     font-size: 28px;
-    font-weight: 200;
-    padding: 0 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    font-style: italic;
 }
 
 .section-we-tied img {
     width: 100%;
     max-width: 800px;
     height: auto;
-    margin: 0 auto 30px;
     object-fit: cover;
 }
 
 /* Thông tin phản hồi */
-select,
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.section-thank-you {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.section-thank-you .section-content {
+    max-width: 500px;
     width: 100%;
-    margin-top: 5px;
+    text-align: center;
 }
 
-input[type="radio"] {
-    accent-color: #d6336c;
+.form-group {
+    margin-bottom: 24px;
 }
 
-label {
-    font-weight: 500;
+.centered-label {
+    display: block;
+    font-weight: bold;
+    text-align: center;
 }
 
-.family-select {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
+.select-toggle-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
 }
 
-.family-option {
-  cursor: pointer;
-  padding: 16px;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  width: 120px;
-  text-align: center;
-  transition: all 0.2s ease;
-  font-size: 16px;
-  background: #fff;
+.select-toggle {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    transition: all 0.3s ease;
 }
 
-.family-option i {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
+#status-select .select-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
 }
 
-.family-option.selected {
-  border-color: #d6336c;
-  box-shadow: 0 0 0 2px #ffe3ec;
-  background: #fff0f5;
-  color: #d6336c;
+.select-toggle.active {
+    border-color: #be3455;
+    color: #be3455;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #be3455;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Nút bật/tắt nhạc */
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #be3455;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#music-toggle svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Slash dấu gạch chéo */
+#music-toggle .slash {
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+/* Chỉ hiện slash khi có class off */
+#music-toggle.off .slash {
+    opacity: 1;
 }
